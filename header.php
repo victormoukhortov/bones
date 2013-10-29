@@ -15,7 +15,6 @@
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
@@ -41,23 +40,18 @@
 
 	<body <?php body_class(); ?>>
 
-		<div id="container">
+		<div id="container" class="clearfix">
 
 			<header class="header" role="banner">
 
-				<div id="inner-header" class="wrap clearfix">
+				<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
+				<h1 id="logo"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+				<?php // if you'd like to use the site description you can un-comment it below ?>
+				<?php // bloginfo('description'); ?>
 
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
-
-
-					<nav role="navigation">
-						<?php bones_main_nav(); ?>
-					</nav>
-
-				</div> <?php // end #inner-header ?>
+				<nav role="navigation">
+					<?php bones_main_nav(); ?>
+				</nav>
 
 			</header> <?php // end header ?>

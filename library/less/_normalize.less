@@ -117,6 +117,11 @@ a:hover {
    Typography
    ========================================================================== */
 
+body {
+  font-size: 1em;
+  line-height: 1.618em;
+}
+
 /*
  * Addresses font sizes and margins set differently in IE6/7.
  * Addresses font sizes within `section` and `article` in FF4+, Chrome, S5.
@@ -124,32 +129,32 @@ a:hover {
 
 h1 {
     font-size: 2em;
-    margin: 0.67em 0;
+    margin: 0 0 0.67em 0;
 }
 
 h2 {
     font-size: 1.5em;
-    margin: 0.83em 0;
+    margin: 0 0 0.83em 0;
 }
 
 h3 {
     font-size: 1.17em;
-    margin: 1em 0;
+    margin: 0 0 1em 0;
 }
 
 h4 {
     font-size: 1em;
-    margin: 1.33em 0;
+    margin: 0 0 1.33em 0;
 }
 
 h5 {
     font-size: 0.83em;
-    margin: 1.67em 0;
+    margin: 0 0 1.67em 0;
 }
 
 h6 {
     font-size: 0.75em;
-    margin: 2.33em 0;
+    margin: 0 0 2.33em 0;
 }
 
 /*
@@ -170,7 +175,9 @@ strong {
 }
 
 blockquote {
-    margin: 1em 40px;
+  font-size: 1em;
+  line-height: 1.618em;
+  margin: 0 0 1.618em 1.618em;
 }
 
 /*
@@ -196,7 +203,9 @@ mark {
 
 p,
 pre {
-    margin: 1em 0;
+  font-size: 1em;
+  line-height: 1.618em;
+  margin: 0 0 1.618em 0;
 }
 
 /*
@@ -278,11 +287,13 @@ dl,
 menu,
 ol,
 ul {
-    margin: 1em 0;
+  font-size: 1em;
+  line-height: 1.618em;
+  margin: 0 0 1.618em 1.618em;
 }
 
 dd {
-    margin: 0 0 0 40px;
+    margin: 0 0 0 1.618em;
 }
 
 /*
@@ -292,7 +303,7 @@ dd {
 menu,
 ol,
 ul {
-    padding: 0 0 0 40px;
+    padding: 0 0 0 1.618em;
 }
 
 /*
@@ -372,7 +383,7 @@ legend {
     border: 0; /* 1 */
     padding: 0;
     white-space: normal; /* 2 */
-    *margin-left: -7px; /* 3 */
+    *margin-left: .35em; /* 3 */
 }
 
 /*
@@ -440,8 +451,8 @@ input[type="checkbox"],
 input[type="radio"] {
     box-sizing: border-box; /* 1 */
     padding: 0; /* 2 */
-    *height: 13px; /* 3 */
-    *width: 13px; /* 3 */
+    *height: .75em; /* 3 */
+    *width: .75em; /* 3 */
 }
 
 /*
@@ -511,14 +522,14 @@ p {
 	-webkit-hyphens: auto;
 	-epub-hyphens:   auto;
 	-moz-hyphens:    auto;
-  hyphens:         auto;
+    hyphens:         auto;
 }
 
 b, strong, .strong { font-weight: bold; }
 
 dfn, em, .em { font-style: italic; }
 
-small, .small { font-size: 75%; }
+small, .small { font-size: .75em; }
 
 ul, ol {
 	padding: 0;
