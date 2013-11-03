@@ -119,7 +119,7 @@ a:hover {
 
 body {
   font-size: 1em;
-  line-height: 1.618em;
+  line-height: @line-height;
 }
 
 /*
@@ -129,32 +129,42 @@ body {
 
 h1 {
     font-size: 2em;
-    margin: 0 0 0.67em 0;
+    line-height: 1.5em;
+    margin: 0 0 .75em 0;
 }
 
 h2 {
     font-size: 1.5em;
-    margin: 0 0 0.83em 0;
+    line-height: 1.5em;
+    margin: 0 0 .5em 0;
 }
 
 h3 {
     font-size: 1.17em;
-    margin: 0 0 1em 0;
+    line-height: 1.2821em;
+    margin: 0 0 1.2821em 0;
 }
 
 h4 {
     font-size: 1em;
-    margin: 0 0 1.33em 0;
+    line-height: 1.5em;
+    margin: 0 0 1.5em 0;
 }
 
 h5 {
     font-size: 0.83em;
-    margin: 0 0 1.67em 0;
+    line-height: 1.8072289em;
+    margin: 0 0 1.8072289em 0;
 }
 
 h6 {
     font-size: 0.75em;
-    margin: 0 0 2.33em 0;
+    line-height: 2em;
+    margin: 0 0 2em 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bold;
 }
 
 /*
@@ -176,8 +186,12 @@ strong {
 
 blockquote {
   font-size: 1em;
-  line-height: 1.618em;
-  margin: 0 0 1.618em 1.618em;
+  line-height: @line-height;
+  margin: 0 0 @line-height @line-height;
+}
+
+cite  {
+  display: block;
 }
 
 /*
@@ -202,10 +216,11 @@ mark {
  */
 
 p,
-pre {
+pre,
+address {
   font-size: 1em;
-  line-height: 1.618em;
-  margin: 0 0 1.618em 0;
+  line-height: @line-height;
+  margin: 0 0 @line-height 0;
 }
 
 /*
@@ -216,10 +231,12 @@ pre {
 code,
 kbd,
 pre,
-samp {
+samp,
+tt {
     font-family: monospace, serif;
     _font-family: 'courier new', monospace;
     font-size: 1em;
+    line-height: @line-height;
 }
 
 /*
@@ -244,10 +261,11 @@ q {
  * Addresses `quotes` property not supported in S4.
  */
 
-q:before,
-q:after {
-    content: '';
-    content: none;
+q:before {
+  content: '“';
+}
+q:after  {
+  content: '”';
 }
 
 small {
@@ -275,6 +293,14 @@ sub {
     bottom: -0.25em;
 }
 
+/*
+ * Prevents 'big' tag from throwing off vertical rhythm
+ */
+big {
+  font-size: 1.16em;
+  line-height: 1.2931em;
+}
+
 /* ==========================================================================
    Lists
    ========================================================================== */
@@ -288,12 +314,19 @@ menu,
 ol,
 ul {
   font-size: 1em;
-  line-height: 1.618em;
-  margin: 0 0 1.618em 1.618em;
+  line-height: @line-height;
+  margin: 0 0 @line-height 0;
+
+}
+
+li, dd {
+  dl, menu, ol, ul {
+    margin: 0;
+  }
 }
 
 dd {
-    margin: 0 0 0 1.618em;
+    margin: 0 0 0 @line-height;
 }
 
 /*
@@ -303,7 +336,7 @@ dd {
 menu,
 ol,
 ul {
-    padding: 0 0 0 1.618em;
+    padding: 0 0 0 @line-height;
 }
 
 /*
@@ -508,6 +541,11 @@ textarea {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+    margin-bottom: @line-height;
+}
+
+th, td {
+  padding: 0 @line-height / 4;
 }
 
 /******************************************************************
@@ -530,11 +568,6 @@ b, strong, .strong { font-weight: bold; }
 dfn, em, .em { font-style: italic; }
 
 small, .small { font-size: .75em; }
-
-ul, ol {
-	padding: 0;
-	list-style-type: none;
-}
 
 dd {
 	margin: 0;

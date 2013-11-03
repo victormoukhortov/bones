@@ -15,11 +15,11 @@ of the styles inside media queries.
 // IMPORTING STYLES
 //
 
-// import normalize
-@import "_normalize.less";
-
 // import mixins
 @import "_mixins.less";
+
+// import normalize
+@import "_normalize.less";
 
 /*
 BASE (MOBILE) SIZE
@@ -31,15 +31,18 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 // Base styles in _tooSmall.less
 @import "_tooSmall.less";
 
-@media screen and (min-width: 33.236em) {
+@just-right: 30em + @line-height * 2;
+@too-big: 30em + 16em + @line-height * 4;
+
+@media screen and (min-width: @just-right) {
 
   @import "_tooBig.less";
 
-  @media screen and (min-width: 30em) and (max-width: 63.236em) {
+}
 
-    @import "_justRight.less";
+@media screen and (min-width: @just-right) and (max-width: @too-big) {
 
-  }
+  @import "_justRight.less";
 
 }
 
