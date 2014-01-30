@@ -1,26 +1,38 @@
-/*html {
-  background: -webkit-linear-gradient(top, #444444 0%, #fff 5%, #fff 100%);
-  -webkit-background-size: 100% @line-height;
-}*/
+/************************************************
+ * LAYOUT
+ ************************************************/
 
-#container {
-  padding: @line-height / 2;
-  max-width: 30em;
-  margin: auto;
+#main {
+  width: 100%;
+  margin: 0;
 }
-
-aside { width: 100%; }
 
 .entry-content {
-  img, video, object {
-    max-width: 100%;
-    height: auto;
+  .alignleft, .alignright, .aligncenter, .alignnone {
+    max-width: @column-width;
   }
-}
-
-.wp-caption {
-  max-width: 100%;
-  img {
-    max-width: 100%;
+  .alignleft {
+    margin-right: 1em;
+    margin-bottom: 1em;
+    display: inline;
+    float: left;
+  }
+  .alignright {
+    margin-left: 1em;
+    margin-bottom: 1em;
+    display: inline;
+    float: right;
+  }
+  & > .alignleft {
+    margin-left: @line-height;
+  }
+  & > .alignright {
+    margin-right: @line-height;
+  }
+  .wp-post-image {
+    margin-left: @line-height;
+    margin-right: @line-height;
+    max-width: none;
+    width: @column-width;
   }
 }

@@ -1,0 +1,104 @@
+/*html {
+  background: -webkit-linear-gradient(top, #444444 0%, #fff 5%, #fff 100%);
+  -webkit-background-size: 100% @line-height;
+}*/
+
+/************************************************
+ * LAYOUT
+ ************************************************/
+
+#container {
+  margin: 0 auto;
+  max-width: @just-right;
+}
+
+.article-footer, .entry-content > *, #comments, .commentlist, #respond, nav.pagination {
+  margin-left: @line-height / 2;
+  margin-right: @line-height / 2;
+}
+
+header.header, footer.footer, #sidebar, .article-header {
+  padding-left: @line-height / 2;
+  padding-right: @line-height / 2;
+}
+
+.archive-title {
+  .h2;
+  margin-left: @h2-line-height / 2;
+  margin-right: @h2-line-height / 2;
+}
+
+.entry-content {
+  & > h1 {
+    margin-left: @h1-line-height / 2;
+    margin-right: @h1-line-height / 2;
+  }
+  & > h2 {
+    margin-left: @h2-line-height / 2;
+    margin-right: @h2-line-height / 2;
+  }
+  & > h3 {
+    margin-left: @h3-line-height / 2;
+    margin-right: @h3-line-height / 2;
+  }
+  & > h4 {
+    margin-left: @h4-line-height / 2;
+    margin-right: @h4-line-height / 2;
+  }
+  & > h5 {
+    margin-left: @h5-line-height / 2;
+    margin-right: @h5-line-height / 2;
+  }
+  & > h6 {
+    margin-left: @h6-line-height / 2;
+    margin-right: @h6-line-height / 2;
+  }
+  .alignleft, .alignright, .aligncenter, .alignnone {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    clear: both;
+    &.wp-caption {
+      margin-bottom: .5em
+    }
+  }
+  img, video, object, embed, iframe, .mejs-container {
+    max-width: 100%;
+    margin-bottom: @line-height;
+  }
+  img, video, object, .mejs-container {
+    height: auto;
+  }
+  .wp-caption {
+    width: auto !important;
+    margin-bottom: @line-height;
+    img {
+      margin-bottom: 0;
+      max-width: 100%;
+    }
+    .wp-caption-text {
+      margin-bottom: 0;
+    }
+  }
+  .wp-post-image, img.full-width {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/************************************************
+ * TYPOGRAPHY
+ ************************************************/
+
+body {
+  color: @text-color;
+  font-family: @body;
+}
+
+a {
+  color: @link-color;
+}
