@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-			<div id="content" class="clearfix">
+			<div id="content" class="clearfix page-<?php echo(basename(get_permalink())); ?>">
 
 				<div id="main" class="clearfix" role="main">
 
@@ -11,10 +11,8 @@
 						<header class="article-header">
 
 							<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-							<p class="byline vcard"><?php
-								printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), bones_get_the_author_posts_link());
-							?></p>
 
+                            <?php bones_byline($post); ?>
 
 						</header> <?php // end article header ?>
 
@@ -40,9 +38,7 @@
 								<section class="entry-content">
 									<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 								</section>
-								<footer class="article-footer">
-										<p><?php _e( 'This is the error message in the page.php template.', 'bonestheme' ); ?></p>
-								</footer>
+								<footer class="article-footer"></footer>
 							</article>
 
 					<?php endif; ?>

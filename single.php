@@ -11,9 +11,8 @@
 							<header class="article-header">
 
 								<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-								<p class="byline vcard"><?php
-									printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&amp;</span> filed under %4$s.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')), bones_get_the_author_posts_link(), get_the_category_list(', ') );
-								?></p>
+
+                                <?php bones_byline($post); ?>
 
 							</header> <?php // end article header ?>
 
@@ -41,9 +40,7 @@
 								<section class="entry-content">
 									<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 								</section>
-								<footer class="article-footer">
-										<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
-								</footer>
+								<footer class="article-footer"></footer>
 						</article>
 
 					<?php endif; ?>

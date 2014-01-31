@@ -9,63 +9,26 @@ slow the page load.
 
 */
 
-// IE8 ployfill for GetComputed Style (for Responsive Script below)
-if (!window.getComputedStyle) {
-    window.getComputedStyle = function(el, pseudo) {
-        this.el = el;
-        this.getPropertyValue = function(prop) {
-            var re = /(\-([a-z]){1})/g;
-            if (prop == 'float') prop = 'styleFloat';
-            if (re.test(prop)) {
-                prop = prop.replace(re, function () {
-                    return arguments[2].toUpperCase();
-                });
-            }
-            return el.currentStyle[prop] ? el.currentStyle[prop] : null;
-        }
-        return this;
-    }
-}
-
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
+    // Load Gravatars only if we are above the Single Column (tooSmall) breakpoint
+    $(window).resize(function() {
+        var viewportWidth = $(window).width();
+        var fontSize = parseFloat($("body").css("font-size"));
+        var lineHeight = parseFloat($("body").css('line-height')) / fontSize;
+        var justRight = fontSize * (30 + lineHeight);
+        var devicePixedRatio = window.devicePixelRatio || 1;
+        if(viewportWidth >= justRight) {
+            $('.comment img[data-gravatar]').each(function(){
+                if($(this).attr('src').indexOf('nothing.gif') !== -1 ) {
+                    // Load Gravatars for the correct pixel ratio
+                    $(this).attr('src', $(this).attr('data-gravatar') + '?s=' + $(this).width() * devicePixedRatio);
+                }
+            });
+        }
+    }).resize();
 
-    /*
-    Responsive jQuery is a tricky thing.
-    There's a bunch of different ways to handle
-    it, so be sure to research and find the one
-    that works for you best.
-    */
-    
-    /* getting viewport width */
-    var responsive_viewport = $(window).width();
-    
-    /* if is below 481px */
-    if (responsive_viewport < 481) {
-    
-    } /* end smallest screen */
-    
-    /* if is larger than 481px */
-    if (responsive_viewport > 481) {
-        
-    } /* end larger than 481px */
-    
-    /* if is above or equal to 768px */
-    if (responsive_viewport >= 768) {
-    
-        /* load gravatars */
-        $('.comment img[data-gravatar]').each(function(){
-            $(this).attr('src',$(this).attr('data-gravatar'));
-        });
-        
-    }
-    
-    /* off the bat large screen actions */
-    if (responsive_viewport > 1030) {
-        
-    }
-    
-	
+
 	// add all your scripts here
 	
  

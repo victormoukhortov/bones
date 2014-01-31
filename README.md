@@ -1,30 +1,18 @@
-# Bones
-__A Lightweight Wordpress Development Theme__
+# Bones-Goldilocks
+__A very light starter theme that uses The Goldilocks Approach__
 
-Bones is designed to make the life of developers easier. It's built
-using HTML5 & has a strong semantic foundation. It was updated recently
-using some of the HTML5 Boilerplate's recommended markup and setup.
-It's constantly growing so be sure to check back often if you are a
-frequent user. I'm always open to contribution. :)
+Bones-Goldilocks takes [The Goldilocks Approach](http://goldilocksapproach.com/)
+to responsive web design, integrated with best practices in web
+typography into a stripped down version of the Bones theme for Wordpress.
 
-Designed by **Eddie Machado**: http://themble.com/bones
+This theme is intended to be used as a starter theme for bespoke Wordpress
+theme development. Its features include semantic html5 markup, device-independent
+responsive layout and a consistent vertical rhythm.
 
-Special Thanks to:
-* Paul Irish & the HTML5 Boilerplate
-* Yoast for some WP functions & optimization ideas
-* Andrew Rogers for code optimization
-* David Dellanave for speed & code optimization
-* and several other developers. :)
-
-Submit Bugs & or Fixes:
-https://github.com/eddiemachado/bones/issues
-
+Issues and pull requests are most welcome.
 
 ## License
 __[WTFPL](http://sam.zoy.org/wtfpl/)__
-
-	Are You Serious? Yes.
-
 
 ## Meta
 * [Changelog](../../blob/master/CHANGELOG.md)

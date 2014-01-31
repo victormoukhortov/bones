@@ -1,7 +1,31 @@
-/*html {
-  background: -webkit-linear-gradient(top, #444444 0%, #fff 5%, #fff 100%);
-  -webkit-background-size: 100% @line-height;
-}*/
+/************************************************
+ * DEBUG
+ ************************************************/
+
+html {
+  #container {
+    background: linear-gradient(left, lighten(lightcoral, 10%) 0%, transparent 5%, transparent 100%);
+    background-repeat: no-repeat;
+    background-size: @line-height 100%;
+    background-position: @line-height / 2 top;
+  }
+  body {
+    background: linear-gradient(top, white 0%, white 100%), linear-gradient(top, lightblue 0%, #fff 5%, #fff 100%);
+    background-size: 100% @line-height * 3, 100% @line-height;
+    background-repeat: no-repeat, repeat;
+    background-position: left top, left top;
+    div, section, #sidebar, #searchform, header, footer, nav, article, li.author, li.comment ul.children, h2, h3, h4, h5, h6 {
+      border-top: none !important;
+      border-bottom: none !important;
+    }
+    #searchform {
+      border: none !important;
+    }
+    input, textarea{
+      border: none !important;
+    }
+  }
+}
 
 /************************************************
  * LAYOUT
@@ -82,6 +106,10 @@ header.header, footer.footer, #sidebar, .article-header {
       margin-bottom: 0;
     }
   }
+  & > blockquote {
+    margin-left: 1em + (@line-height / 2);
+    margin-right: 1em + (@line-height / 2);
+  }
   .wp-post-image, img.full-width {
     margin-left: 0;
     margin-right: 0;
@@ -99,6 +127,74 @@ body {
   font-family: @body;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: @headings;
+}
+
 a {
   color: @link-color;
+}
+
+/************************************************
+ * HEADER
+ ************************************************/
+
+header.header {
+
+}
+
+/************************************************
+ * ARTICLE
+ ************************************************/
+
+article.post {
+
+}
+
+/************************************************
+ * PAGINATION
+ ************************************************/
+
+nav.pagination {
+
+}
+
+/************************************************
+ * COMMENTS
+ ************************************************/
+
+#comments {
+
+}
+
+.commentlist {
+  .comment-author {
+    img.avatar {
+      display: none;
+    }
+  }
+}
+
+/************************************************
+ * COMMENT FORM
+ ************************************************/
+
+.respond-form {
+
+}
+
+/************************************************
+ * SIDEBAR
+ ************************************************/
+
+#sidebar {
+
+}
+
+/************************************************
+ * FOOTER
+ ************************************************/
+
+footer.footer {
+
 }

@@ -162,4 +162,20 @@ function bones_wpsearch($form) {
 } // don't remove this bracket!
 
 
-?>
+/************* BYLINE LAYOUT *****************/
+
+function bones_byline($post) {
+    $GLOBALS['post'] = $post; ?>
+    <ul class="byline vcard">
+        <li class="author"><?php printf(__('By <span class="author">%1$s</span>', 'bonestheme'), bones_get_the_author_posts_link()); ?></li>
+        <li class="time"><time class="updated" datetime="<?php echo get_the_time( 'Y-m-j' ); ?>" pubdate><?php echo get_the_time(__( 'F jS, Y', 'bonestheme' )); ?></time></li>
+        <?php if (!is_page()): ?>
+            <li class="categories"><?php echo get_the_category_list(', '); ?></li>
+        <?php endif; ?>
+        <?php if ('open' == $post->comment_status || get_comments_number() > 0): ?>
+            <li class="comments"><a href="<?php echo get_comments_link(); ?>" title="<?php printf(__('Comment on %1$s', 'bonestheme'), the_title()); ?>"><?php (get_comments_number() == 1 ? printf(__('%1$s Comment', 'bonestheme'), get_comments_number()) : printf(__('%1$s Comments', 'bonestheme'), get_comments_number())); ?></a></li>
+        <?php endif; ?>
+    </ul>
+<?php
+
+}

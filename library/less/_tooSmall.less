@@ -7,6 +7,7 @@
   margin: 0;
 }
 
+// Image alignment
 .entry-content {
   .alignleft, .alignright, .aligncenter, .alignnone {
     max-width: @column-width;
@@ -24,15 +25,27 @@
     float: right;
   }
   & > .alignleft {
-    margin-left: @line-height;
+    margin-left: @line-height / 2;
   }
   & > .alignright {
-    margin-right: @line-height;
+    margin-right: @line-height / 2;
   }
   .wp-post-image {
-    margin-left: @line-height;
-    margin-right: @line-height;
+    margin-left: @line-height / 2;
+    margin-right: @line-height / 2;
     max-width: none;
     width: @column-width;
+  }
+}
+
+/************************************************
+ * COMMENTS
+ ************************************************/
+
+.commentlist {
+  .comment-author {
+    img.avatar {
+      display: block;
+    }
   }
 }

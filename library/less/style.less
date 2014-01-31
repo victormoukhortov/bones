@@ -32,18 +32,22 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 // Base styles in _tiny.less
 @import "_tiny.less";
 
+
+// First Breakpoint: Single Column
 @media screen and (min-width: @just-right) {
 
   @import "_tooSmall.less";
 
 }
 
+// Second Breakpoint: Larger font size
 @media screen and (min-width: (@just-right * @just-right-font-size)) {
 
   @import "_justRight.less";
 
 }
 
+// Third Brakpoint: Two Columns
 @media screen and (min-width: (@too-big * @just-right-font-size)) {
 
   @import "_tooBig.less";
